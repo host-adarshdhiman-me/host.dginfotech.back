@@ -47,10 +47,10 @@ if missing:
 # --- FastAPI app initialization ---
 app = FastAPI()
 
-# --- CORS (adjust origins if needed) ---
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*", "http://dginfo.tech/", "http://www.dginfo.tech/", "http://localhost:3000", "https://dginfotech-front.vercel.app/"],  # Or better: ["https://your-frontend.vercel.app"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
