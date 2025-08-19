@@ -10,6 +10,9 @@ import uuid
 import psycopg2
 import psycopg2.extras
 from decimal import Decimal
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 # Load .env file at the start of the application
 load_dotenv()
@@ -47,7 +50,7 @@ app = FastAPI()
 # --- CORS (adjust origins if needed) ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000","https://dginfotech-front.vercel.app/","https://www.dginfo.tech/","https://dginfo.tech/"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
