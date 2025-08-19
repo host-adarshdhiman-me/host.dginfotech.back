@@ -47,7 +47,7 @@ app = FastAPI()
 # --- CORS (adjust origins if needed) ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000","https://dginfotech-front.vercel.app/","https://www.dginfo.tech/","https://dginfo.tech/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -293,7 +293,7 @@ class QuickContactApproveRequest(BaseModel):
 # lose all sessions if the server restarts. For production, use a database or
 # a dedicated cache like Redis.
 active_sessions = {}
-SESSION_DURATION_MINUTES = 1080
+SESSION_DURATION_MINUTES = 60
 
 
 # --- DB helper ---
